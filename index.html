@@ -56,6 +56,7 @@
     display: inline-block; padding: 10px 18px; border-radius: 8px; font-weight: 600; font-size: 15px;
     border: 1px solid var(--line); color: var(--text); background: var(--surface);
   }
+  button.btn { font: inherit; font-weight: 600; font-size: 15px; cursor: pointer; }
   .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
   .btn:hover { text-decoration: none; opacity: .9; }
 
@@ -123,7 +124,7 @@
     </p>
     <div class="btns">
       <a class="btn primary" href="#proyectos">Ver proyectos</a>
-      <a class="btn" href="mailto:cortemiliano9@gmail.com">Escríbeme</a>
+      <a class="btn" href="#contacto">Escríbeme</a>
       <a class="btn" href="https://github.com/Emicort17">GitHub</a>
     </div>
   </div>
@@ -237,8 +238,10 @@
     <ul class="edu">
       <li><strong>Ingeniería en Desarrollo y Gestión de Software</strong>, UTEZ · 2024 – 2026</li>
       <li><strong>TSU en Tecnologías de la Información</strong> (Desarrollo de Software Multiplataforma), UTEZ · 2022 – 2024</li>
-      <li>Oracle Academy: Database Programming with PL/SQL (2023) y Java Foundations (2023)</li>
-      <li>Inglés B2+ (ELET, 2022)</li>
+      <li><strong>Android Certified Application Developer</strong> (Desarrollador de aplicaciones para Android), avalado por Advanced Training <!-- TODO: agregar fecha --></li>
+      <li><strong>Database Programming with PL/SQL</strong>, avalado por Oracle Academy · Agosto 2023</li>
+      <li><strong>Java Foundations</strong>, avalado por Oracle Academy · Abril 2023</li>
+      <li><strong>English Language E-Test (ELET), nivel B2+</strong>, Universal Kvalitet Services · Mayo 2022</li>
     </ul>
   </div>
 </section>
@@ -247,13 +250,42 @@
   <div class="wrap">
     <h2>Contacto</h2>
     <p class="sub">Xochitepec, Morelos · Abierto a oportunidades y trabajo en equipo.</p>
+    <p><strong id="correo">cortemiliano9@gmail.com</strong></p>
     <div class="btns">
-      <a class="btn primary" href="mailto:cortemiliano9@gmail.com">cortemiliano9@gmail.com</a>
+      <a class="btn primary" target="_blank" rel="noopener"
+         href="https://mail.google.com/mail/?view=cm&fs=1&to=cortemiliano9@gmail.com&su=Contacto%20desde%20tu%20portafolio">Escribir por Gmail</a>
+      <button class="btn" id="copiar" type="button">Copiar correo</button>
       <a class="btn" href="https://github.com/Emicort17">github.com/Emicort17</a>
       <!-- TODO: agregar LinkedIn si tienes -->
     </div>
   </div>
 </section>
+
+<script>
+  (function () {
+    var btn = document.getElementById('copiar');
+    var correo = document.getElementById('correo').textContent;
+    btn.addEventListener('click', function () {
+      function listo() {
+        btn.textContent = '¡Copiado!';
+        setTimeout(function () { btn.textContent = 'Copiar correo'; }, 2000);
+      }
+      function respaldo() {
+        var t = document.createElement('textarea');
+        t.value = correo;
+        document.body.appendChild(t);
+        t.select();
+        try { document.execCommand('copy'); listo(); } catch (e) {}
+        document.body.removeChild(t);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(correo).then(listo, respaldo);
+      } else {
+        respaldo();
+      }
+    });
+  })();
+</script>
 
 <footer>
   <div class="wrap">© 2026 Emiliano Cortes Galvez</div>
