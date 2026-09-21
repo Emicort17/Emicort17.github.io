@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emiliano Cortes Galvez · Desarrollador backend</title>
+<meta name="description" content="Desarrollador backend con Java, Spring Boot y APIs REST seguras (Spring Security, JWT). Portafolio de proyectos.">
+<style>
+  :root {
+    --bg: #fafaf9;
+    --surface: #ffffff;
+    --text: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --accent: #0f766e;
+    --accent-soft: #ccfbf1;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0c0a09;
+      --surface: #1c1917;
+      --text: #f5f5f4;
+      --muted: #a8a29e;
+      --line: #292524;
+      --accent: #2dd4bf;
+      --accent-soft: #134e4a;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+
+  nav { border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 56px; }
+  nav strong { font-size: 15px; }
+  nav ul { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; font-size: 14px; }
+  nav ul a { color: var(--muted); }
+
+  header.hero { padding: 72px 0 56px; }
+  .hero .tag {
+    display: inline-block; font-size: 13px; font-weight: 600; color: var(--accent);
+    background: var(--accent-soft); padding: 4px 10px; border-radius: 999px; margin-bottom: 16px;
+  }
+  .hero h1 { font-size: clamp(32px, 6vw, 48px); line-height: 1.1; margin: 0 0 16px; letter-spacing: -0.02em; }
+  .hero p { font-size: 18px; color: var(--muted); max-width: 620px; margin: 0 0 24px; }
+  .btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 10px 18px; border-radius: 8px; font-weight: 600; font-size: 15px;
+    border: 1px solid var(--line); color: var(--text); background: var(--surface);
+  }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  .btn:hover { text-decoration: none; opacity: .9; }
+
+  section { padding: 48px 0; border-top: 1px solid var(--line); }
+  section h2 { font-size: 24px; margin: 0 0 8px; letter-spacing: -0.01em; }
+  section .sub { color: var(--muted); margin: 0 0 28px; }
+
+  .grid { display: grid; gap: 16px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 22px;
+  }
+  .card h3 { margin: 0 0 4px; font-size: 19px; }
+  .meta { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+  .card p { margin: 0 0 12px; }
+  .card ul { margin: 0 0 14px; padding-left: 20px; }
+  .card li { margin-bottom: 4px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+  .chip {
+    font-size: 12px; padding: 3px 9px; border-radius: 6px; background: var(--bg);
+    border: 1px solid var(--line); color: var(--muted);
+  }
+  .links { font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; }
+  .note { font-size: 13px; color: var(--muted); }
+  .badge {
+    display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
+    padding: 2px 8px; border-radius: 4px; background: var(--accent-soft); color: var(--accent); margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  .skills { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  .skills h3 { font-size: 14px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: 0 0 10px; }
+  .skills ul { list-style: none; padding: 0; margin: 0; }
+  .skills li { margin-bottom: 4px; }
+
+  .edu li { margin-bottom: 8px; }
+  footer { border-top: 1px solid var(--line); padding: 32px 0; color: var(--muted); font-size: 14px; }
+
+  @media (max-width: 560px) {
+    nav ul { gap: 14px; }
+    header.hero { padding: 48px 0 40px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <strong>Emiliano Cortes Galvez</strong>
+    <ul>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">Desarrollador backend · Java / Spring Boot</span>
+    <h1>APIs REST seguras, de la base de datos al cliente.</h1>
+    <p>
+      Construyo backends con Java, Spring Boot, Spring Security y JWT. He trabajado en proyectos para clientes reales
+      (control de acceso con QR, análisis energético con APIs externas) y en aplicaciones de equipo.
+      Ingeniería en Desarrollo y Gestión de Software, UTEZ (2026).
+    </p>
+    <div class="btns">
+      <a class="btn primary" href="#proyectos">Ver proyectos</a>
+      <a class="btn" href="mailto:cortemiliano9@gmail.com">Escríbeme</a>
+      <a class="btn" href="https://github.com/Emicort17">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<section id="proyectos">
+  <div class="wrap">
+    <h2>Proyectos</h2>
+    <p class="sub">Los dos primeros son trabajo para clientes, así que el código es privado. Los describo por lo que hice yo.</p>
+
+    <div class="grid">
+
+      <article class="card">
+        <h3>App Zaru <span class="badge">Cliente</span></h3>
+        <div class="meta">Desarrollo Tecnológico LR · Ene – Abr 2026 · Backend</div>
+        <p>Microservicios backend para una aplicación con control de acceso por código QR.</p>
+        <ul>
+          <li>Desarrollé parte del backend: CRUDs y persistencia de datos de usuarios.</li>
+          <li>Implementé el flujo de generación y validación de códigos QR para gestionar ingresos.</li>
+          <li>Seguridad a nivel de servicio con Spring Security y JWT.</li>
+        </ul>
+        <div class="chips">
+          <span class="chip">Java 17</span><span class="chip">Spring Boot 3</span>
+          <span class="chip">Spring Security</span><span class="chip">JWT</span>
+          <span class="chip">QR</span><span class="chip">REST</span>
+        </div>
+        <div class="note">Código privado (proyecto de cliente).</div>
+      </article>
+
+      <article class="card">
+        <h3>ADM-Energy <span class="badge">Cliente</span></h3>
+        <div class="meta">Vive Energía Solar · Abr – Sep 2024 · Análisis y módulos de reportes</div>
+        <p>Plataforma de análisis energético de sistemas solares para clientes de la empresa.</p>
+        <ul>
+          <li>Integré el monitoreo con una API de clima, una API de radiación solar y las tarifas CFE.</li>
+          <li>Consulta y descarga de información del portal CFE para trámites de interconexión.</li>
+          <li>Generé reportes PDF para clientes: generación, consumo, ahorros, beneficios ambientales y facturación.</li>
+        </ul>
+        <div class="chips">
+          <!-- TODO: confirmar el stack real de ADM-Energy -->
+          <span class="chip">APIs externas</span><span class="chip">Reportes PDF</span>
+          <span class="chip">Análisis de datos</span>
+        </div>
+        <div class="note">Código privado (proyecto de cliente).</div>
+      </article>
+
+      <article class="card">
+        <h3>GYM Register</h3>
+        <div class="meta">2026 · Backend completo</div>
+        <p>Aplicación de registro para gimnasio.</p>
+        <ul>
+          <li>Desarrollé todo el backend: CRUDs y seguridad.</li>
+          <li>Entorno con Docker Compose, flujo de CI con GitHub Actions y scripts de respaldo.</li>
+        </ul>
+        <div class="chips">
+          <span class="chip">TypeScript</span><span class="chip">Docker</span>
+          <span class="chip">GitHub Actions</span>
+          <!-- TODO: framework, base de datos y método de autenticación -->
+        </div>
+        <!-- TODO: capturas o video corto; el repo pasará a privado -->
+        <div class="note">Repositorio privado.</div>
+      </article>
+
+      <article class="card">
+        <h3>SIHAS · Registro de hábitos saludables</h3>
+        <div class="meta">UTEZ · 2025 · Proyecto en equipo de 7 · Backend</div>
+        <p>App para registrar alimentación, sueño y ejercicio, con seguimiento remoto por profesionales de la salud.</p>
+        <ul>
+          <li>Desarrollé el backend del proyecto.</li>
+          <li>Integré una API externa de alimentos para obtener la información nutricional.</li>
+        </ul>
+        <div class="chips">
+          <span class="chip">JavaScript</span><span class="chip">API externa</span>
+          <span class="chip">Trabajo en equipo</span>
+        </div>
+        <div class="links"><a href="https://github.com/Emicort17/SIHAS">Ver repositorio →</a></div>
+      </article>
+
+      <article class="card">
+        <h3>SIGVEP</h3>
+        <div class="meta">UTEZ · 2025 · Backend</div>
+        <!-- TODO: qué es SIGVEP en una línea, stack, y subir el código (hoy el repo solo tiene el README) -->
+        <p>Sistema del que desarrollé 3 CRUDs del backend.</p>
+        <div class="links"><a href="https://github.com/Emicort17/SIGVEP">Ver repositorio →</a></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="habilidades">
+  <div class="wrap">
+    <h2>Habilidades</h2>
+    <p class="sub">Con lo que trabajo hoy.</p>
+    <div class="grid skills">
+      <div class="card"><h3>Backend</h3><ul>
+        <li>Java, Spring Boot</li><li>APIs REST</li><li>Spring Security, JWT</li><li>Python (básico)</li></ul></div>
+      <div class="card"><h3>Bases de datos</h3><ul>
+        <li>MySQL, SQL Server</li><li>NoSQL (básico)</li><li>Modelos, migraciones, consultas</li></ul></div>
+      <div class="card"><h3>Herramientas</h3><ul>
+        <li>Git / GitHub</li><li>Docker</li><li>AWS (EC2, S3)</li><li>Scrum</li></ul></div>
+      <div class="card"><h3>Frontend</h3><ul>
+        <li>HTML5, CSS3, JavaScript</li><li>Bootstrap</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="formacion">
+  <div class="wrap">
+    <h2>Formación y certificaciones</h2>
+    <ul class="edu">
+      <li><strong>Ingeniería en Desarrollo y Gestión de Software</strong>, UTEZ · 2024 – 2026</li>
+      <li><strong>TSU en Tecnologías de la Información</strong> (Desarrollo de Software Multiplataforma), UTEZ · 2022 – 2024</li>
+      <li>Oracle Academy: Database Programming with PL/SQL (2023) y Java Foundations (2023)</li>
+      <li>Inglés B2+ (ELET, 2022)</li>
+    </ul>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap">
+    <h2>Contacto</h2>
+    <p class="sub">Xochitepec, Morelos · Abierto a oportunidades y trabajo en equipo.</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:cortemiliano9@gmail.com">cortemiliano9@gmail.com</a>
+      <a class="btn" href="https://github.com/Emicort17">github.com/Emicort17</a>
+      <!-- TODO: agregar LinkedIn si tienes -->
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Emiliano Cortes Galvez</div>
+</footer>
+
+</body>
+</html>
